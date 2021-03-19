@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arry = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21];
+        //data:数组数据，num:第几页，pageNum:每页的数据个数
+        function pageData(data, num, pageNum) {
+            let newArry = [];
+            let times = Math.floor(data.length / pageNum)
+            console.log(times)
+            for (var i = 0; i <= times; i++) {
+                newArry.push(arry.splice(0, pageNum))
+            }
+            console.log(newArry)
+            return newArry[num - 1]
+
+        }
+        console.log(pageData(arry, 3, 1))
+    </script>
+</body>
+
+</html>
